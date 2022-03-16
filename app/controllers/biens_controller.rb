@@ -17,7 +17,11 @@ class BiensController < ApplicationController
   def create
     @bien = Bien.new(bien_params)
     @bien.save
-    redirect_to index_path(@bien)
+    redirect_to biens_path(@bien)
     authorize @bien
+  end
+
+  def bien_params
+    params.require(:bien).permit(:address, :loyé, :meublé, :saisonnié, :disponible, :user_id)
   end
 end

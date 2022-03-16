@@ -1,27 +1,16 @@
 <h2>Index</h2>
-
 <div class="container">
   <% @biens.each do |bien| %>
-  <div class="cards">
-    <%= bien.address %>
-    <%= bien.loyé%>
-    <%#= bien.picture%>
-    <%#=bien.meublé?%>
-    <%#=bien.saisonnié?%>
-    <%#=bien.loué?%>
-  </div>
+      <div class="card">
+        <%= bien.address %>
+        <%= bien.loyé%>
+        <%#= bien.picture%>
+        <%#=bien.meublé?%>
+        <%#=bien.saisonnié?%>
+        <%#=bien.loué?%>
+        <div class="action-bien">
+          <%= link_to "voir l'appartement", biens_path(bien), class: "secondary-button"%>
+        </div>
+      </div>
   <% end %>
 </div>
-
-  <div class="row">
-    <div class="col-6">
-    <ul class="cards-map">
-      <% @biens.each do |bien| %>
-        <div class="card-product">
-          <%= bien.address %>
-          <%= bien.loyé%>
-        </div>
-        <br>
-      <% end %>
-    </ul>
-    </div>
