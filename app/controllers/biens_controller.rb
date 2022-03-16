@@ -7,7 +7,8 @@ class BiensController < ApplicationController
     @markers = @biens.geocoded.map do |bien|
       {
         lat: bien.latitude,
-        lng: bien.longitude
+        lng: bien.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { bien: bien })
       }
     end
   end
