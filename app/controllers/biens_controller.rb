@@ -2,6 +2,15 @@ class BiensController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   def index
     @biens = policy_scope(Bien)
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @biens.geocoded.map do |bien|
+      {
+        lat: bien.latitude,
+        lng: bien.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { bien: bien })
+      }
+    end
   end
 
   def show
