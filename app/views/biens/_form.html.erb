@@ -1,0 +1,10 @@
+<div class="container">
+  <%= simple_form_for(@bien) do |f| %>
+    <%= f.input :address %>
+    <%= f.input :loyé %>
+    <%= f.input :meublé, as: :select, collection: [['Oui',true], ['Non',false]], required: false, include_blank: false %>
+    <%= f.input :saisonnié, as: :select, collection: [['Yes',true], ['No',false]], required: false, include_blank: false %>
+    <%= f.input :disponible, as: :select, collection: [['Yes',true], ['No',false]], required: false, include_blank: false %>
+    <%= f.submit "Ajouter ce bien", class: "secondary-button" %>
+  <% end %>
+</div>
