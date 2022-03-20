@@ -1,20 +1,21 @@
 <h2>Index</h2>
-
-<div style="width: 100%; height: 450px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+<div class="mapcontainer">
+  <div style="width: 100%; height: 450px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+</div>
 
 <div class="container">
   <% @biens.each do |bien| %>
       <div class="card">
         <%= bien.address %>
+        <%=bien.meublé?%>
+        <%=bien.disponible?%>
         <%= bien.loyé%>
+        <%=bien.saisonnié?%>
         <%#= bien.picture%>
-        <%#=bien.meublé?%>
-        <%#=bien.saisonnié?%>
-        <%#=bien.loué?%>
         <div class="action-bien">
           <%= link_to "voir l'appartement", bien_path(bien), class: "secondary-button"%>
         </div>
