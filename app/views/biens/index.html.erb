@@ -10,12 +10,18 @@
 <div class="container">
   <% @biens.each do |bien| %>
       <div class="card">
+        <div class="card-image">
+          <%#= bien.image%>
+        </div>
+        <div class="card-title">
+          <%= bien.user.name.key%>
+          <%= bien.ville %>
+        </div>
         <%= bien.address %>
         <%=bien.meublé?%>
         <%=bien.disponible?%>
         <%= bien.loyé%>
         <%=bien.saisonnié?%>
-        <%#= bien.picture%>
         <div class="action-bien">
           <%= link_to "voir l'appartement", bien_path(bien), class: "secondary-button"%>
         </div>
