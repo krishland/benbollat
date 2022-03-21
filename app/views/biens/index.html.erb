@@ -19,7 +19,7 @@
         <p>
           Loyé:<%= bien.loyé%>€/mois<br>
          <%=bien.meublé == true ? "Meublé" : "Non meublé"%><br>
-         <%=bien.disponible == true ? "Pas encore loué": "Loué"%>
+         <%=bien.disponible == true ? "Pas encore loué" : "Loué"%>
         </p>
         <a>
           <%= link_to "voir l'appartement", bien_path(bien), class: "secondary-button"%>
