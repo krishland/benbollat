@@ -13,9 +13,19 @@
          <%=bien.meublé == true ? "Meublé" : "Non meublé"%><br>
          <%=bien.disponible == true ? "Pas encore loué" : "Loué"%>
         </p>
-        <a>
-          <%= link_to "voir l'appartement", bien_path(bien), class: "secondary-button"%>
-        </a>
+        <div class="links">
+          <ul>
+            <li>
+              <%= link_to "voir l'appartement", bien_path(bien), class: "secondary-button"%>
+            </li>
+            <li>
+              <%= link_to "Modifier", edit_bien_path(bien), class: "secondary-button"%>
+            </li>
+            <li>
+              <%= link_to "Suprimer",:method => :delete, class: "secondary-button"%>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
