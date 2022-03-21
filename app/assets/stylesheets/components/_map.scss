@@ -17,24 +17,3 @@
   border: 1px solid lightgrey;
   box-shadow: none;
 }
-
-///////////
-.containermap {
-  display: flex;
-}
-
-#mapbox {
-  height: 100vh;
-  position: sticky;
-  top: 0;
-}
-
-.cards-map {
-  display: grid;
-  grid-template-columns: 1fr;
-  flex-grow: 1;
-}
-
-.no-outline:focus-visible {
-  outline:none;
-}
