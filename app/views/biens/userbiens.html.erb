@@ -1,0 +1,23 @@
+<div class="container">
+
+  <% @biens_mine.each do |bien| %>
+    <div class="card-product">
+      <%= image_tag "#{bien.image}"%>
+      <div class="card-product-infos">
+        <h3><%= bien.user.surnom%></h3>
+        <h5>
+          <%= bien.ville %>
+        </h5>
+        <p>
+          Loyé:<%= bien.loyé%>€/mois<br>
+         <%=bien.meublé == true ? "Meublé" : "Non meublé"%><br>
+         <%=bien.disponible == true ? "Pas encore loué" : "Loué"%>
+        </p>
+        <a>
+          <%= link_to "voir l'appartement", bien_path(bien), class: "secondary-button"%>
+        </a>
+      </div>
+    </div>
+
+  <% end %>
+</div>
