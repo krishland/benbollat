@@ -1,9 +1,12 @@
 <div class="container">
   <%= simple_form_for(@bien) do |f| %>
     <%= f.input :ville %>
-    <%= f.input :address%>
-            <%# input_html: { data: { geocoder_target: "address" } },
-            wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+    ⚠️Disclaimer : Si vous ne souhaitez pas localiser précisément votre bien vous pouvez ne rentrer que le nom du quartier ou le nom de la ville de votre bien.
+    Vous pourrez modifier ces informations a tout moment en cliquant sur l'onglet "Mes biens" puis en selectionnant "Modifier" sur votre bien. ⚠️
+    <br>
+    <%= f.input :address,
+              input_html: { data: { geocoder_target: "address" } },
+              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
     <%= f.input :loyé %>
     <%= f.input :meublé, as: :select, collection: [['Oui',true], ['Non',false]], required: false, include_blank: false %>
     <%= f.input :saisonnié, as: :select, collection: [['Oui',true], ['Non',false]], required: false, include_blank: false %>
