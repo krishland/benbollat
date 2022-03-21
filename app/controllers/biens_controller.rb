@@ -21,6 +21,7 @@ class BiensController < ApplicationController
   def userbiens
     biens = policy_scope(Bien)
     @biens_mine = biens.where(user: current_user)
+    authorize @bien
   end
 
   def show
