@@ -10,6 +10,10 @@ class BienPolicy < ApplicationPolicy
       true
     end
 
+    def userbiens?
+      true
+    end
+
     def show?
       true
     end

@@ -18,6 +18,12 @@ class BiensController < ApplicationController
     end
   end
 
+  def userbiens
+    @biens = policy_scope(Bien)
+    @biens_mine = @biens.where(user: current_user)
+    authorize @biens
+  end
+
   def show
     @bien = Bien.find(params[:id])
     authorize @bien
