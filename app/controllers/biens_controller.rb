@@ -42,23 +42,20 @@ class BiensController < ApplicationController
   end
 
   def edit
-    #@bien = Bien.find(params[:id])
+    @bien = Bien.find(params[:id])
+    authorize @bien
   end
 
   def update
-    # @bien = Bien.find(params[:id])
-    # @bien.update(params[:bien])
-    # redirect_to bien_path(@bien)
-    if @bien.update(bien_params)
-      redirect_to bien_path(@politic)
-  else
-    render :edit
-  end
+    @bien = Bien.find(params[:id])
+    @bien.update(bien_params)
+    redirect_to userbiens_biens_path(@restaurant)
+  authorize @bien
   end
 
   private
 
   def bien_params
-    params.require(:bien).permit(:address, :loyé, :meublé, :saisonnié, :disponible, :user_id)
+    params.require(:bien).permit(:ville,:address, :loyé, :meublé, :saisonnié, :disponible, :user_id)
   end
 end

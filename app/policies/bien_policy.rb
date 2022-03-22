@@ -27,7 +27,7 @@ class BienPolicy < ApplicationPolicy
     end
 
     def update?
-      true
+      user == record.user
     end
 
     def edit?
