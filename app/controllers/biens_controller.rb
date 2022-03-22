@@ -42,7 +42,7 @@ class BiensController < ApplicationController
   end
 
   def edit
-    @bien = Bien.find(params[:id])
+    # @bien = Bien.find(params[:id])
     authorize @bien
   end
 
