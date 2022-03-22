@@ -1,4 +1,5 @@
 .mapcontainer{
+  //position: sticky;
   height: 375px;
 }
 
@@ -20,4 +21,9 @@
   width: 100%;
   border: 1px solid lightgrey;
   box-shadow: none;
+}
+
+.mapboxgl-canvas{
+  height: 100%;
+  width: 100%;
 }
