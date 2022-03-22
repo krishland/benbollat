@@ -50,7 +50,14 @@ class BiensController < ApplicationController
     @bien = Bien.find(params[:id])
     @bien.update(bien_params)
     redirect_to userbiens_biens_path(@restaurant)
-  authorize @bien
+    authorize @bien
+  end
+
+  def destroy
+    @bien = Bien.find(params[:id])
+    @bien.destroy
+    redirect_to userbiens_biens_path
+    authorize @bien
   end
 
   private

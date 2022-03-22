@@ -22,7 +22,9 @@
               <%= link_to "Modifier", edit_bien_path(bien), class: "secondary-button"%>
             </li>
             <li>
-              <%= link_to "Suprimer",:method => :delete, class: "secondary-button"%>
+              <%= link_to "Supprimer", bien_path(bien),
+              method: :delete,
+              data: { confirm: "vous etes sur ?" } %>
             </li>
           </ul>
         </div>
