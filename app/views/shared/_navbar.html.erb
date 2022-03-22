@@ -18,14 +18,17 @@
             <%= link_to "Mes biens",  userbiens_biens_path, class: "dropdown-item" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Mon compte", "#", class: "nav-link" %>
+            <%= link_to "Mon compte", edit_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
               <%= button_to "Log out", destroy_user_session_path, method: :delete %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to "Inscription", new_user_registration_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
