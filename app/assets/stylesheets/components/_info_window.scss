@@ -1,0 +1,34 @@
+.lepopupquifaitchier{
+  background-color: rgba(0,0,0,0.7);
+  top: 5em;
+  z-index: 500;
+  transform: none !important;
+  //bottom: 50px;
+  //right: 1em;
+  //left: 1em;
+  margin-left: 2.5%;
+  margin-top: 24.5em;
+  border-radius: 10px;
+  position: absolute;
+  //margin-top: 50px;
+  width: 100%;
+  .mapboxgl-popup-content {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    .img{
+      height: 60px;
+      width: 60px;
+    }
+    .message-show.info-window {
+      background-size: cover;
+      padding: 1em 0 1.5em;
+      height: 100%;
+    }
+  }
+}
+
+.mapboxgl-popup-tip {
+  display: none;
+}
