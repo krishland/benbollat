@@ -1,2 +1,16 @@
-<h2><%= bien.address %></h2>
-<p><%= bien.loyé %></p>
+
+  <%# <div class="biencontent"> %>
+    <%= link_to bien_path(bien) do %>
+        <%= image_tag (bien.image) %>
+      <div class="ownerinfo">
+        <%= bien.user.surnom%>
+        <%#= L'avatar du owner %>
+      </div>
+      <div class ="infosbien">
+        <%= bien.ville %>
+        <%= bien.loyé %>
+        <%=bien.meublé == true ? "Meublé" : "Non meublé"%>
+        <%=bien.disponible == true ? "Pas encore loué" : "Loué"%>
+      </div>
+    <% end %>
+  <%# </div> %>
