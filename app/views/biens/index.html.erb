@@ -10,17 +10,15 @@
   <% @biens.each do |bien| %>
     <%= link_to bien_path(bien) do %>
       <div class="card-product">
-        <%= image_tag "#{bien.image}"%>
-        <div class="card-product-infos">
-          <h3><%= bien.user.surnom%></h3>
-          <h5>
-            <%= bien.ville %>
-          </h5>
-          <p>
-          Loyé:<%= bien.loyé%>€/mois<br>
+          <%= image_tag "#{bien.image}"%>
+        <div class="card-product-infos1">
+          <h1><%= bien.user.surnom%></h1> <br>
+          <h2><%= bien.ville %></h2> <br>
+        </div>
+        <div class="card-product-infos2">
+          Loyé: <%= bien.loyé%>€/mensuel<br>
           <%=bien.meublé == true ? "Meublé" : "Non meublé"%><br>
           <%=bien.disponible == true ? "Pas encore loué" : "Loué"%>
-          </p>
         </div>
       </div>
     <% end %>
