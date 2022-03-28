@@ -28,11 +28,17 @@ width: 100%;
   padding: none;
 }
 
+.infosbien{
+  line-height:1 ;
+}
+
 .infosbien h1 {
   font-size: 20px;
 }
 
 .infosbien h2{
+  margin-top: -15PX;
+  margin-bottom: 1px;
   font-size: 18px;
 }
 
@@ -60,4 +66,12 @@ width: 100%;
 }
 .mapboxgl-popup-tip {
   display: none;
+}
+
+.card-product-infos-info_window{
+    position: absolute;
+    background-color: #F5F5F5;
+    border: 1px solid #F5F5F5;
+    border-radius: 10px;
+    padding: 10px;
 }
