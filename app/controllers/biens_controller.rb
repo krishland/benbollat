@@ -14,7 +14,7 @@ class BiensController < ApplicationController
           lng: bien.longitude,
           info_window: render_to_string(partial: "info_window", locals: { bien: bien })
         }
-      end
+    end
     end
   end
 
@@ -65,4 +65,5 @@ class BiensController < ApplicationController
   def bien_params
     params.require(:bien).permit(:ville,:address, :loyé, :meublé, :saisonnié, :disponible, :user_id)
   end
+
 end

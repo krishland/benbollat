@@ -32,8 +32,8 @@ export default class extends Controller {
         .setPopup(popup) // add this
         .addTo(this.map)
     });
-  }
-
+  };
 }
+
 
 // {maxWidth:'95%', anchor: 'top-left',className:"lepopupquifaitchier"}

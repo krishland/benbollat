@@ -2,19 +2,19 @@
 <div class="container">
   <div class="content">
     <div class="photo">
-      <%#=@bien.photo%>
+       <%= image_tag "#{@bien.image}"%>
     </div>
     <div class="address">
       <%=@bien.address%>
     </div>
     <div class="loyé">
-      <%=@bien.loyé%>
+      <p>Loyé : <%=@bien.loyé%>€ mensuel.</p>
     </div>
     <div class="meublé">
-      <%=@bien.meublé%>
+      <p>Loué en <%=@bien.meublé == true ? "meublé." : "non meublé."%></p>
     </div>
     <div class="disponible">
-      <%=@bien.disponible%>
+     <p></p> <%=@bien.disponible == true ? "Pas encore loué." : "Actuellement loué."%>
     </div>
   </div>
 </div>
