@@ -63,7 +63,7 @@ class BiensController < ApplicationController
   private
 
   def bien_params
-    params.require(:bien).permit(:ville,:address, :loyé, :meublé, :saisonnié, :disponible, :user_id)
+    params.require(:bien).permit(:ville, :image1, :image2, :address, :loyé, :meublé, :saisonnié, :disponible, :user_id)
   end
 
 end

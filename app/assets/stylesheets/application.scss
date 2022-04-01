@@ -11,8 +11,11 @@
 @import "components/index";
 @import "pages/index";
 
+// mapbox-gl
 @import "mapbox-gl/dist/mapbox-gl";
-@import "~swiper/swiper-bundle";
+
+// Swiper
+@import "components/swiper-bundle";
 
 .container{
   overflow: hidden;
