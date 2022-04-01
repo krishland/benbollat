@@ -1,9 +1,25 @@
 <h2>Show</h2>
 <div class="container">
-  <div class="content">
-    <div class="photo">
-       <%= image_tag "#{@bien.image}"%>
-    </div>
+  <%# <div class="content"> %>
+    <!-- Additional required wrapper -->
+  <div data-controller="carousel" class="swiper-container w-25 my-5"
+    data-carousel-options-value='{
+    "pagination": { "el": ".swiper-pagination",
+                    "dynamicBullets": "true" },
+    "navigation": { "nextEl": ".swiper-button-next",
+                    "prevEl": ".swiper-button-prev"}}'>
+    <%# <div class="photo"> %>
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+            <div class="swiper-slide"><%= image_tag "#{@bien.image1}"%></div>
+            <div class="swiper-slide"><%= image_tag "#{@bien.image2}"%></div>
+            <div class="swiper-slide"><%= image_tag "#{@bien.image3}"%></div>
+          <div class="swiper-button-next"></div>
+      </div>
+  </div>
+  <%# </div> %>
     <div class="address">
       <%=@bien.address%>
     </div>
@@ -18,3 +34,11 @@
     </div>
   </div>
 </div>
+///////////
+
+  ...
+  <!-- Pagination (... or 1/10 or progress bar) -->
+
+  <!-- Navigation buttons (< >) -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
