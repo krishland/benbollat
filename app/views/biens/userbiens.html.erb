@@ -2,7 +2,8 @@
 
   <% @biens_mine.each do |bien| %>
     <div class="card-product">
-      <%= image_tag "#{bien.image1}"%>
+      <%# <%= image_tag "#{bien.image1}"%> %>
+      <img src=<%="#{bien.image1}"%> alt="...">
       <div class="card-product-infos">
         <h3><%= bien.user.surnom%></h3>
         <h5>

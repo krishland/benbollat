@@ -10,7 +10,8 @@
   <% @biens.each do |bien| %>
     <%= link_to bien_path(bien) do %>
       <div class="card-product">
-          <%= image_tag "#{bien.image1}"%>
+      <img src=<%="#{bien.image1}"%> alt="...">
+          <%# <%= image_tag "#{bien.image1}.jpeg"%> %>
         <div class="card-product-infos1">
           <h1><%= bien.user.surnom%></h1> <br>
           <h2><%= bien.ville %></h2> <br>

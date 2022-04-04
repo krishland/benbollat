@@ -14,7 +14,7 @@ class BiensController < ApplicationController
           lng: bien.longitude,
           info_window: render_to_string(partial: "info_window", locals: { bien: bien })
         }
-    end
+      end
     end
   end
 
@@ -36,7 +36,8 @@ class BiensController < ApplicationController
 
   def create
     @bien = Bien.new(bien_params)
-    @bien.save
+    @bien.user=current_user
+    @bien.save!
     redirect_to biens_path(@bien)
     authorize @bien
   end

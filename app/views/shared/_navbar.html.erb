@@ -5,8 +5,8 @@
         <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
       <% end %>
     <% else %>
-      <%= link_to biens_path do %>
-        <i class="fa-solid fa-circle-arrow-left"></i>
+      <%= link_to biens_path, class:"navbar-back" do %>
+        <i class="fa-solid fa-circle-left"></i>
       <% end %>
     <% end %>
 
@@ -23,11 +23,18 @@
           <li class="nav-item">
             <%= link_to "Mes biens",  userbiens_biens_path, class: "dropdown-item" %>
           </li>
-          <li class="nav-item">
+          <li>
             <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
           </li>
           <li class="nav-item">
               <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "#{current_user.profilepic}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Mon compte", edit_user_registration_path, class: "dropdown-item" %>
+              <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
           </li>
         <% else %>
           <li class="nav-item">
