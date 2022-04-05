@@ -5,6 +5,15 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
 
   has_many :biens, dependent: :destroy
+  has_one_attached :profilepic
 
-  has_one_attached :photo
+
+  def profile_picture
+    if profilepic.attached?
+      profilepic.key
+    else
+      "avatar-unknown.jpg"
+    end
+  end
+
 end

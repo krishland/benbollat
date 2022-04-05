@@ -31,6 +31,6 @@
   end
 
   def user_params
-    params.require(:user).permit(:email, :photo)
+    params.require(:user).permit(:email, :surnom, :profilepic)
   end
 end
